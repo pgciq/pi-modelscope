@@ -1,0 +1,37 @@
+{
+  "name": "pi-modelscope",
+  "version": "0.1.0",
+  "description": "Pi extension for the ModelScope OpenAI-compatible provider",
+  "keywords": [
+    "pi-package",
+    "modelscope",
+    "qwen",
+    "openai-compatible"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgciq/pi-modelscope"
+  },
+  "files": [
+    "extensions",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  }
+}
