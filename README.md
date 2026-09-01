@@ -100,3 +100,15 @@ npm test
 ```
 
 The extension uses pi-ai's `openai-completions` API and resolves both the newer lazy subpath and the older bare-package export for compatibility with different pi versions.
+
+## Release to npm
+
+The GitHub Actions workflow in `.github/workflows/publish.yml` publishes on tags matching `v*` and also supports manual dispatch. It runs `npm ci`, `npm test`, and publishes with npm provenance:
+
+```bash
+npm version patch
+# or: npm version minor / npm version major
+git push origin main --follow-tags
+```
+
+Before the first release, configure npm Trusted Publishing for the `pgciq/pi-modelscope` repository and the `Publish to npm` workflow. The workflow uses GitHub OIDC (`id-token: write`) and does not store an npm token in the repository.
